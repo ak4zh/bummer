@@ -1,7 +1,7 @@
 <div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <nav
-            class="relative flex justify-between sm:h-10"
+            class="relative flex flex-col sm:flex-row items-center sm:justify-between sm:h-10 gap-4"
             aria-label="Global"
         >
             <a href="/" class="!text-transparent bg-clip-text bg-gradient-to-r from-brand/50 to-brand/80 text-5xl font-bold">

@@ -5,7 +5,7 @@
     
 </script>
 
-<div class="bg-wave h-screen">
+<div class="bg-wave h-screen overscroll-contain">
     <div class="relative  text-slate-50 overflow-hidden">
     
         <div class="relative pt-6 pb-16 sm:pb-24">
