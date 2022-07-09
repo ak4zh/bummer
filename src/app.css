@@ -1,0 +1,9 @@
+:root {
+    --color-orange: 249 115 22;
+
+    --color-brand: var(--color-orange)
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
