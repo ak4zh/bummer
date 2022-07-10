@@ -63,3 +63,18 @@ export const auth = {
 		return await supabase.auth.signOut();
 	}
 };
+
+
+export const userProfiles= {
+	async get() {
+		const query = supabase.from('user_profiles').select('*');
+		return await loaderQuery(query);	
+	}
+};
+
+export const bummers= {
+	async get(username: string) {
+		const query = supabase.from('bummers').select('*').eq('username', username);
+		return await loaderQuery(query);	
+	}
+}

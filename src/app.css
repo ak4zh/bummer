@@ -8,7 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
 	.bg-wave {
 		background-color: #353239;
