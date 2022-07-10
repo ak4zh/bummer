@@ -58,8 +58,8 @@
     })
 </script>
 
-<div class="max-w-7xl mx-auto md:flex overflow-hidden h-screen">
-    <div class="overflow-y-auto md:w-96 w-full">
+<div class="max-w-7xl mx-auto md:flex">
+    <div class="md:overflow-y-auto md:w-96 w-full">
         <form use:form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-2">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -105,7 +105,7 @@
             <button class="mx-auto w-full bg-brand/50 hover:bg-brand/40 rounded-full py-2 px-4 mb-8" type="submit">Save</button>
         </form>
     </div>
-    <div class="flex-1 overflow-y-auto">
+    <div class="md:flex-1 md:overflow-y-auto">
         <Resume bind:content={content}/>
     </div>
 </div>
