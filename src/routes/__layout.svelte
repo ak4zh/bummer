@@ -22,7 +22,7 @@
 	})
 </script>
 
-<div class="bg-slate-50 h-screen overflow-hidden">
+<div class="bg-slate-50 h-screen">
 	<div class="relative pt-6 pb-16 sm:pb-24">
 		<NavBar />
 		<slot />

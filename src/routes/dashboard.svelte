@@ -58,8 +58,8 @@
     })
 </script>
 
-<div class="max-w-7xl mx-auto md:flex">
-    <div class="md:overflow-y-auto md:w-96 w-full">
+<div class="flex flex-col lg:flex-row max-w-7xl mx-auto max-h-screen h-screen">
+    <div class="lg:overflow-y-auto lg:w-96 w-full lg:h-4/5">
         <form use:form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-2">
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -81,8 +81,8 @@
             </div>
             <div class="flex flex-col w-full mx-auto items-center justify-center">
                 {#each bummers as bummer, index}
-                    <div class="flex gap-2 rounded-xl bg-brand/20 p-4 m-4 w-full">
-                        <div class="flex flex-col gap-4 w-5/6">
+                    <div class="flex gap-2 rounded-xl bg-brand/20 p-4 m-4 w-full justify-between">
+                        <div class="flex flex-col gap-4 w-full">
                             <input maxlength="4" type="text" pattern="[0-9]{4}" name="data.bummers.{index}.year" placeholder="Year" />
                             <textarea name="data.bummers.{index}.description" placeholder="bummer summary"></textarea>
                         </div>
@@ -105,7 +105,7 @@
             <button class="mx-auto w-full bg-brand/50 hover:bg-brand/40 rounded-full py-2 px-4 mb-8" type="submit">Save</button>
         </form>
     </div>
-    <div class="md:flex-1 md:overflow-y-auto">
+    <div class="lg:overflow-y-auto lg:flex-1 w-full lg:h-4/5">
         <Resume bind:content={content}/>
     </div>
 </div>
