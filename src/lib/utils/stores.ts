@@ -1,4 +1,4 @@
 import { writable } from 'svelte/store';
 
 export const loading = writable(false);
-export const userProfile = writable()
+export const userProfile = writable();

@@ -64,36 +64,49 @@ export const auth = {
 	}
 };
 
-
-export const userProfiles= {
+export const userProfiles = {
 	async get() {
-		const query = supabase
-			.from('user_profiles')
-			.select(`
+		const query = supabase.from('user_profiles').select(`
 			username,
 			full_name,
 			view_count,
 			data
 		`);
-		return await loaderQuery(query);	
+		return await loaderQuery(query);
 	},
 
 	async update(data) {
 		const query = supabase
 			.from('user_profiles')
 			.update(data)
-			.match({ id: get(user)?.id })
+			.match({ id: get(user)?.id });
 		return await loaderQuery(query);
 	}
 };
 
-export const bummers= {
+export const getPagination = (page: number, size: number) => {
+	const limit = size ? +size : 50;
+	const from = page ? page * limit : 0;
+	const to = page ? from + size : size;
+	return { from, to };
+};
+
+export const bummers = {
 	async get(username: string) {
 		const query = supabase.from('bummers').select('*').eq('username', username);
-		return await loaderQuery(query);	
+		return await loaderQuery(query);
 	},
 	async taken(username: string) {
 		const query = supabase.from('bummers').select('username').eq('username', username);
-		return await loaderQuery(query);	
+		return await loaderQuery(query);
+	},
+	async all(page = 0) {
+		const { from, to } = getPagination(page, 50);
+		const query = supabase
+			.from('bummers')
+			.select('*')
+			.order('view_count', { ascending: false })
+			.range(from, to);
+		return await loaderQuery(query);
 	}
-}
+};

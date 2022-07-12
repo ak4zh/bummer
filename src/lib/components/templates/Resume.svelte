@@ -1,14 +1,17 @@
 <script>
 	import { page } from '$app/stores';
-    import groupBy from '$lib/utils/groupBy';
-	export let content 
+	import groupBy from '$lib/utils/groupBy';
+	export let content;
 </script>
 
-
 <div class="p-4 md:p-10 bg-gray-100 max-w-7xl mx-auto text-base font-light">
-	<div class="flex flex-col justify-center text-xl font-bold tracking-widest text-gray-300 text-center">
+	<div
+		class="flex flex-col justify-center text-xl font-bold tracking-widest text-gray-300 text-center"
+	>
 		<h1>
-			<span class="text-5xl text-brand/80">{content?.username || 'username'}</span><span class="text-xs">.bummer.me</span>
+			<span class="text-5xl text-brand/80">{content?.username || 'username'}</span><span
+				class="text-xs">.bummer.me</span
+			>
 		</h1>
 		<p class="text-sm">Mistakes. Blunders. Screw-ups.</p>
 		<h2 class="mt-8 text-3xl">{content?.full_name || 'Full Name'}</h2>
@@ -18,13 +21,14 @@
 		<div class="mr-14">
 			<img
 				class="md:w-40"
-				src="https://ui-avatars.com/api/?name={content?.full_name || 'Full Name'}&size=128&rounded=true"
+				src="https://ui-avatars.com/api/?name={content?.full_name ||
+					'Full Name'}&size=128&rounded=true"
 				alt="Logo"
 			/>
 		</div>
 		{#if content?.avatar}
 			<div class="md:mr-4">
-				<img class="md:w-40" src="{content.avatar}" alt="{content.username}" />
+				<img class="md:w-40" src={content.avatar} alt={content.username} />
 			</div>
 		{/if}
 		<div class="md:border-l-2 pl-4 p-2 col-span-2 text-justify md:w-1/2 mt-10 md:mt-0 break-all">
@@ -41,12 +45,11 @@
 					<div class="flex items-center md:mr-8 mb-4 md:mb-0">
 						<i class="fas fa-envelope-open-text fa-2x mr-2" />
 						{#if contact?.url}
-							<a href="{contact.url}">{contact.title}</a>
+							<a href={contact.url}>{contact.title}</a>
 						{:else}
 							<p>{contact.title}</p>
 						{/if}
 					</div>
-
 				{/each}
 			</div>
 		</div>

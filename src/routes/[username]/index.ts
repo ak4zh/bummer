@@ -1,4 +1,4 @@
-import { bummers } from "$lib/db";
+import { bummers } from '$lib/db';
 
 /** @type {import('./__types/[id]').RequestHandler} */
 export async function get({ params }) {
