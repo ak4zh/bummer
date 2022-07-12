@@ -1,3 +1,6 @@
+<script>
+	import { auth, user } from "$lib/db";
+</script>
 <div>
 	<div class="max-w-7xl mx-auto px-4 sm:px-6">
 		<nav
@@ -11,12 +14,24 @@
 				bummer
 			</a>
 
-			<a
-				href="/dashboard"
-				class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-slate-900 hover:bg-slate-700"
-			>
-				Share your bummer
-			</a>
+			<div>
+				<a
+					href="/dashboard"
+					class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-slate-900 hover:bg-slate-700"
+				>
+					Share your bummer
+				</a>
+				{#if $user}
+					<button
+						on:click={() => auth.signOut()}
+						class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-slate-900 hover:bg-slate-700"
+					>
+
+						Sign Out
+					</button>
+				{/if}
+			</div>
+			
 		</nav>
 	</div>
 </div>

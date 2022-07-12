@@ -8,7 +8,7 @@
 <div class="p-4 md:p-10 bg-gray-100 max-w-7xl mx-auto text-base font-light">
 	<div class="flex flex-col justify-center text-xl font-bold tracking-widest text-gray-300 text-center">
 		<h1>
-			<span class="text-xs">bummer.me/</span><span class="text-5xl text-brand/80">{content?.username || 'username'}</span>
+			<span class="text-5xl text-brand/80">{content?.username || 'username'}</span><span class="text-xs">.bummer.me</span>
 		</h1>
 		<p class="text-sm">Mistakes. Blunders. Screw-ups.</p>
 		<h2 class="mt-8 text-3xl">{content?.full_name || 'Full Name'}</h2>

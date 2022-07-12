@@ -3,5 +3,7 @@
     export let content
 </script>
 
-<Resume {content}/>
+<div class="mt-4">
+    <Resume {content}/>
+</div>
 

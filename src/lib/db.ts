@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { readable } from 'svelte/store';
+import { get, readable } from 'svelte/store';
 import { goto } from '$app/navigation';
 import { loading } from './utils/stores';
 
@@ -67,14 +67,33 @@ export const auth = {
 
 export const userProfiles= {
 	async get() {
-		const query = supabase.from('user_profiles').select('*');
+		const query = supabase
+			.from('user_profiles')
+			.select(`
+			username,
+			full_name,
+			view_count,
+			data
+		`);
 		return await loaderQuery(query);	
+	},
+
+	async update(data) {
+		const query = supabase
+			.from('user_profiles')
+			.update(data)
+			.match({ id: get(user)?.id })
+		return await loaderQuery(query);
 	}
 };
 
 export const bummers= {
 	async get(username: string) {
 		const query = supabase.from('bummers').select('*').eq('username', username);
+		return await loaderQuery(query);	
+	},
+	async taken(username: string) {
+		const query = supabase.from('bummers').select('username').eq('username', username);
 		return await loaderQuery(query);	
 	}
 }
