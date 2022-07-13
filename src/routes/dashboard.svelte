@@ -225,7 +225,7 @@
 						>
 					</form>
 				</div>
-				<div class="lg:overflow-y-auto lg:flex-1 w-full lg:h-4/5">
+				<div class="lg:overflow-y-auto lg:flex-1 w-full">
 					<Resume bind:content={$formData} />
 				</div>
 			</div>
