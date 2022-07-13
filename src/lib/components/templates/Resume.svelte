@@ -3,14 +3,14 @@
 	export let content;
 </script>
 
-<div class="p-4 md:p-10 bg-gray-100 max-w-7xl mx-auto text-base font-light">
+<div class="p-4 bg-gray-100 max-w-5xl mx-auto text-base font-light">
 	<div
-		class="flex flex-col justify-center text-xl font-bold tracking-widest text-gray-300 text-center"
+		class="flex flex-col justify-center text-md md:text-xl font-bold tracking-widest text-gray-300 text-center"
 	>
 		<h1>
 			<span
 				class="text-xs">bummer.me/</span
-			><span class="text-5xl text-brand/80">{content?.username || 'username'}</span>
+			><span class="text-3xl md:text-5xl text-brand/80">{content?.username || 'username'}</span>
 		</h1>
 		<p class="text-sm">Mistakes. Blunders. Screw-ups.</p>
 		<h2 class="mt-8 text-3xl">{content?.full_name || 'Full Name'}</h2>
@@ -30,7 +30,7 @@
 				<img class="md:w-40" src={content.avatar} alt={content.username} />
 			</div>
 		{/if}
-		<div class="md:border-l-2 pl-4 p-2 col-span-2 text-justify md:w-1/2 mt-10 md:mt-0 break-all">
+		<div class="md:border-l-2 pl-4 p-2 col-span-2 text-justify md:w-1/2 mt-10 md:mt-0 break-words">
 			<p>
 				{content?.data?.bio || 'About me'}
 			</p>
@@ -53,28 +53,35 @@
 			</div>
 		</div>
 	</div>
-	{#each Object.entries(groupBy(content?.data?.bummers || [], 'type')) as [bummerType, bummers]}
-		<div class="mt-6 text-center max-w-7xl divide-y-4 divide-brand/70">
-			<h1 class="font-bold italic mb-2 text-start">{bummerType}</h1>
-			<div class="relative mt-5 text-left">
-				{#each bummers as bummer}
-					<div class="flex items-center relative">
-						<div class="hidden md:block w-20">
-							<div class="font-bold italic">{bummer?.year}</div>
-						</div>
 
-						<div class="border-r-2 border-brand/50 absolute h-full left-1 md:left-20 top-2 z-10">
-							<i class="fas fa-circle -top-1 -ml-2 absolute" />
-						</div>
+	<div class="w-full">
+		{#each Object.entries(groupBy(content?.data?.bummers || [], 'type')) as [bummerType, bummers]}
+			<div class="mt-6 text-center divide-y-4 divide-brand/70">
+				<h1 class="font-bold italic mb-2 text-start">{bummerType}</h1>
+				<div class="relative mt-5 text-left">
+					{#each bummers as bummer}
+						<div class="flex items-center">
+							<div class="hidden md:block w-20">
+								<div class="font-bold italic">{bummer?.year}</div>
+							</div>
 
-						<div class="ml-10 w-full break-all">
-							<div class="mb-4 mt-4">
-								{bummer.description}
+							<div class="border-r-2 border-brand/50 absolute h-full left-1 md:left-20 top-2 z-10">
+								<i class="fas fa-circle -top-1 -ml-2 absolute" />
+							</div>
+
+							<div class="ml-10 w-full break-words">
+								<div class="md:hidden w-20">
+									<div class="font-bold italic underline decoration-wavy decoration-brand/60 decoration-2">{bummer?.year}</div>
+								</div>
+								<div class="mb-4 mt-4">
+									{bummer.description}
+								</div>
 							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
+				</div>
 			</div>
-		</div>
-	{/each}
+		{/each}
+	</div>
+
 </div>
