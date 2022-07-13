@@ -1,4 +1,4 @@
-<main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 h-screen">
+<main class="mt-16 sm:mt-24 h-full">
 	<div class="text-center">
 		<h1 class="text-5xl tracking-tight font-extrabold sm:text-5xl md:text-6xl">
 			<span class="block xl:inline">Let's fail to hide</span>

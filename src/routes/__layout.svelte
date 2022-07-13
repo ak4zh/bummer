@@ -18,7 +18,7 @@
 	}
 </script>
 
-<div class="bg-slate-50 min-h-screen h-full bg-wave">
+<div class="bg-slate-50 bg-wave min-h-screen">
 	<div class="relative pt-6 pb-16 sm:pb-24 max-w-5xl mx-auto">
 		<NavBar />
 		{#if $navigating || $loading}
