@@ -21,6 +21,7 @@
 		full_name: yup.string().required(),
 		data: yup.object().shape({
 			bio: yup.string().required(),
+			credential: yup.string().required(),
 			bummers: yup.array().of(
 				yup.object().shape({
 					year: yup.number().required().min(1900).max(2099),
@@ -144,6 +145,18 @@
 								name="full_name"
 								type="text"
 								placeholder="Full Name"
+							/>
+						</div>
+						<div class="mb-4">
+							<label class="block text-gray-700 text-sm font-bold mb-2" for="credential">
+								Credentials
+							</label>
+							<input
+								bind:value={$formData.credential}
+								class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+								name="credential"
+								type="text"
+								placeholder="Software Engineer / Student etc"
 							/>
 						</div>
 						<div class="mb-4">

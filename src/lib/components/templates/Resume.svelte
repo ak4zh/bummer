@@ -4,18 +4,21 @@
 </script>
 
 <div class="p-4 bg-gray-100 max-w-5xl mx-auto text-base font-light">
+	<section class="text-gray-300 flex flex-col items-center justify-center">
+		<!-- style="height: 50vh" -->
+		<div class="flex flex-col items-center justify-center text-center">
+			<h1 class="text-3xl sm:text-4xl lg:text-6xl text-gray-500">{content?.full_name}</h1>
+			<h2 class="font-light text-xl sm:text-3xl lg:text-5xl">{content?.credential || 'Human'}</h2>
+		</div>
+	</section>
 	<div
-		class="flex flex-col justify-center text-md md:text-xl font-bold tracking-widest text-gray-300 text-center"
+		class="flex flex-col justify-center text-md md:text-xl font-bold tracking-widest text-gray-300 text-center mt-6"
 	>
-		<h1>
-			<span
-				class="text-xs">bummer.me/</span
-			><span class="text-3xl md:text-5xl text-brand/80">{content?.username || 'username'}</span>
-		</h1>
-		<p class="text-sm">Mistakes. Blunders. Screw-ups.</p>
-		<h2 class="mt-8 text-3xl">{content?.full_name || 'Full Name'}</h2>
-	</div>
 
+		<h1>
+			<span class="text-xs">bummer.me/</span><span class="text-2xl md:text-3xl text-brand/80">{content?.username || 'username'}</span>
+		</h1>
+	</div>
 	<div class="grid col-span-1 md:flex items-center mt-10 justify-center">
 		<div class="mr-14">
 			<img
@@ -37,7 +40,7 @@
 		</div>
 	</div>
 
-	<div class="grid col-span-1 md:flex items-center justify-center mt-20">
+	<div class="grid col-span-1 md:flex items-center justify-center">
 		<div>
 			<div class="md:flex items-center mb-4">
 				{#each content?.data?.contacts || [] as contact}
