@@ -8,7 +8,7 @@
 		<!-- style="height: 50vh" -->
 		<div class="flex flex-col items-center justify-center text-center">
 			<h1 class="text-3xl sm:text-4xl lg:text-6xl text-gray-500">{content?.full_name}</h1>
-			<h2 class="font-light text-xl sm:text-3xl lg:text-5xl">{content?.credential || 'Human'}</h2>
+			<h2 class="font-light text-xl sm:text-3xl lg:text-5xl">{content?.data?.credential || 'Human'}</h2>
 		</div>
 	</section>
 	<div
