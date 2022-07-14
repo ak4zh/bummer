@@ -62,7 +62,7 @@
 			<div class="mt-6 text-center divide-y-4 divide-brand/70">
 				<h1 class="font-bold italic mb-2 text-start">{bummerType}</h1>
 				<div class="relative mt-5 text-left">
-					{#each bummers as bummer}
+					{#each bummers.sort((a,b) => b.year - a.year).reverse() as bummer}
 						<div class="flex items-center">
 							<div class="hidden md:block w-20">
 								<div class="font-bold italic">{bummer?.year}</div>
