@@ -64,8 +64,6 @@ export const userProfiles = {
 	},
 
 	async update(userId: string, data) {
-		console.log(userId)
-		console.log(data)
 		const query = supabaseClient
 			.from('user_profiles')
 			.update(data)

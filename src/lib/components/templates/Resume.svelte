@@ -3,12 +3,16 @@
 	export let content;
 </script>
 
-<div class="p-4 bg-gray-100 dark:bg-gray-800 mx-auto font-light rounded-3xl max-w-5xl border-8 border-emerald-200">
+<div
+	class="p-4 bg-gray-100 dark:bg-gray-800 mx-auto font-light rounded-3xl max-w-5xl border-8 border-emerald-200"
+>
 	<section class="text-gray-300 flex flex-col items-center justify-center">
 		<!-- style="height: 50vh" -->
 		<div class="flex flex-col items-center justify-center text-center">
-			<h1 class="text-3xl sm:text-4xl lg:text-6xl text-gray-500">{content?.full_name}</h1>
-			<h2 class="font-light text-xl sm:text-3xl lg:text-5xl">
+			<h1 class="text-3xl sm:text-4xl lg:text-6xl text-gray-400 dark:text-gray-200">
+				{content?.full_name}
+			</h1>
+			<h2 class="font-light text-xl sm:text-3xl text-gray-300 dark:text-gray-500">
 				{content?.data?.credential || 'Human'}
 			</h2>
 		</div>

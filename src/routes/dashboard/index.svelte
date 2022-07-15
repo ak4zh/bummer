@@ -91,10 +91,10 @@
 <Toaster />
 
 <div class="mt-4 flex flex-col gap-4 ">
-	<div class="bg-gray-100 dark:bg-slate-600 rounded-full">
+	<div class="bg-gray-100 dark:bg-slate-800 rounded-full">
 		<form
 			use:usernameForm
-			class="mx-auto w-full flex flex-col sm:flex-row rounded-full shadow-sm gap-4 p-6"
+			class="mx-auto w-full flex flex-col sm:flex-row rounded-full shadow-sm gap-4 p-6 items-center justify-center"
 		>
 			<div class="flex">
 				<span class="inline-flex items-center px-3 rounded-l-md border border-r-0text-sm"
@@ -113,9 +113,9 @@
 	</div>
 
 	{#if $formData?.username}
-		<div class="flex flex-col lg:flex-row max-h-screen h-screen mt-4">
-			<div class="lg:overflow-y-auto lg:w-96 w-full lg:h-4/5 bg-gray-100 dark:bg-slate-800">
-				<form use:form class="shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-2">
+		<div class="flex flex-col lg:flex-row m-4 gap-4">
+			<div class="top-0 lg:overflow-y-auto lg:w-96 w-full bg-gray-100 dark:bg-slate-800 rounded-3xl">
+				<form use:form class="rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-2">
 					<div class="mb-4">
 						<label class="block text-sm font-bold mb-2" for="full_name"> Full Name </label>
 						<input
@@ -206,7 +206,7 @@
 					<button class="btn-secondary" type="submit">Save</button>
 				</form>
 			</div>
-			<div class="lg:overflow-y-auto lg:flex-1 w-full">
+			<div class="lg:flex-1 w-full">
 				<Resume bind:content={$formData} />
 			</div>
 		</div>
