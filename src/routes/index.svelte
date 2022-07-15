@@ -18,7 +18,7 @@
 				<p class="mt-5 text-sm md:text-lg lg:text-xl">Your failures are probably as interesting as your accomplishments.</p>
 				<div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
 					<div class="rounded-md shadow">
-						<a href="/explore" class="btn-secondary btn-large"> Explore bummer stories </a>
+						<a sveltekit:prefetch href="/explore" class="btn-secondary btn-large"> Explore bummer stories </a>
 					</div>
 				</div>
 			</div>
