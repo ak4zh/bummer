@@ -5,9 +5,9 @@
 <div class="m-6">
 	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 		{#each bummers as bummer}
-			<a href="/{bummer.username}">
+			<a sveltekit:prefetch href="/{bummer.username}">
 				<div
-					class="flex flex-col bg-gradient-to-b from-emerald-300 to-gray-50 dark:from-emerald-300 dark:to-gray-900 p-6 rounded-xl hover:shadow-xl shadow-emerald-900 dark:shadow-emerald-50"
+					class="flex flex-col bg-gradient-to-b from-emerald-200 to-gray-50 dark:from-emerald-200 dark:to-gray-900 p-6 rounded-xl hover:shadow-xl shadow-emerald-900 dark:shadow-emerald-50"
 				>
 					<!-- <div class="flex justify-center">
 						<img
