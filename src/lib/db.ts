@@ -83,11 +83,11 @@ export const getPagination = (page: number, size: number) => {
 
 export const bummers = {
 	async get(username: string) {
-		const query = supabaseClient.from('bummers').select('*').eq('username', username);
+		const query = supabaseClient.from('bummers').select('*').eq('username', username.toLowerCase());
 		return await loaderQuery(query);
 	},
 	async taken(username: string) {
-		const query = supabaseClient.from('bummers').select('username').eq('username', username);
+		const query = supabaseClient.from('bummers').select('username').eq('username', username.toLowerCase());
 		return await loaderQuery(query);
 	},
 	async all(page = 0) {

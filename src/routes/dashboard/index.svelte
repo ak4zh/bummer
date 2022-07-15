@@ -40,6 +40,10 @@
 		data: usernameFormData,
 		errors: usernameErrors
 	} = createForm({
+		transform: (values) => ({
+			...values,
+			username: values.username.toLowerCase().trim()
+		}),
 		extend: reporterComp,
 		onSubmit: async (values) => {
 			const { data, error } = await userProfiles.update(user.id, values);
