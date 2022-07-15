@@ -30,6 +30,7 @@
 		"postcss": "^8.4.14",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"supabase-ui-svelte": "^0.1.1",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-french-toast": "^1.0.3",
@@ -42,5 +43,9 @@
 		"vite": "^2.9.13",
 		"yup": "^0.32.11"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@supabase/auth-helpers-svelte": "^0.4.5",
+		"@supabase/auth-helpers-sveltekit": "^0.6.7"
+	}
 }
