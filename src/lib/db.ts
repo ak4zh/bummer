@@ -1,7 +1,5 @@
-import { get } from 'svelte/store';
 import { loading } from './utils/stores';
 import { createSupabaseClient } from '@supabase/auth-helpers-sveltekit';
-import { session } from '$app/stores';
 
 const dbAPI = async (query) => {
 	return await query;
@@ -66,6 +64,8 @@ export const userProfiles = {
 	},
 
 	async update(userId: string, data) {
+		console.log(userId)
+		console.log(data)
 		const query = supabaseClient
 			.from('user_profiles')
 			.update(data)

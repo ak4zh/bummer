@@ -73,7 +73,7 @@
 		extend: [reporter(), validator({ schema })],
 		onSubmit: async (values) => {
 			delete values['username'];
-			const { data, error } = await userProfiles.update(values);
+			const { data, error } = await userProfiles.update(user.id, values);
 			if (data.length > 0) {
 				toast.success('Profile updated...');
 			}
