@@ -63,11 +63,11 @@
 		unsetField
 	} = createForm({
 		initialValues: {
-			username: data.username,
-			full_name: data.full_name,
+			username: data.username || '',
+			full_name: data.full_name || '',
 			data: {
-				bio: data.data.bio,
-				bummers: data.data.bummers
+				bio: data.data?.bio || '',
+				bummers: data.data?.bummers || defaultBummer
 			}
 		},
 		extend: [reporter(), validator({ schema })],
@@ -104,14 +104,14 @@
 					name="username"
 					class="flex-1 block w-full rounded-none rounded-r-md sm:text-sm"
 					placeholder="username"
-					value={data?.usernam || ''}
+					value={data?.username || ''}
 				/>
 			</div>
 			<button class="flex-shrink-0 bg-brand/70 px-4 py-2 rounded-xl" type="submit">Set username</button>
 		</form>
 	</div>
 
-	{#if data?.username}
+	{#if $formData?.username}
 		<div class="flex flex-col lg:flex-row max-h-screen h-screen mt-4">
 			<div class="lg:overflow-y-auto lg:w-96 w-full lg:h-4/5 bg-gray-100 dark:bg-slate-800">
 				<form use:form class="shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col gap-2">
