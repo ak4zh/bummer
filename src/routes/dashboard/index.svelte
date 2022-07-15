@@ -66,7 +66,7 @@
 			username: data.username,
 			full_name: data.full_name,
 			data: {
-				bio: data.data.full_name,
+				bio: data.data.bio,
 				bummers: data.data.bummers
 			}
 		},
