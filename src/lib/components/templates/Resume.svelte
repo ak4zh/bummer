@@ -3,7 +3,7 @@
 	export let content;
 </script>
 
-<div class="p-4 bg-gray-100 dark:bg-gray-800 mx-auto font-light rounded-2xl">
+<div class="p-4 bg-gray-100 dark:bg-gray-800 mx-auto font-light rounded-3xl max-w-5xl border-8 border-emerald-200">
 	<section class="text-gray-300 flex flex-col items-center justify-center">
 		<!-- style="height: 50vh" -->
 		<div class="flex flex-col items-center justify-center text-center">
