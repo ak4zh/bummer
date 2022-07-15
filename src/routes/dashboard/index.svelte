@@ -66,7 +66,7 @@
 			username: data.username || '',
 			full_name: data.full_name || '',
 			data: {
-				credential: data.data?.bio || '', 
+				credential: data.data?.credential || '', 
 				bio: data.data?.bio || '',
 				bummers: data.data?.bummers || defaultBummer
 			}
